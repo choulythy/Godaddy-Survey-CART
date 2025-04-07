@@ -6,6 +6,22 @@ The goal of this model is to **predict how likely a customer is to recommend GoD
 - **Moderates**
 - **Detractors**
 
+---
+
+### 🧹 Data Preprocessing
+
+- Extracted raw data from the `"Data"` sheet in Excel.
+- Selected survey questions: Q2, Q5, Q5a–Q5d, Q6, Q9, Q11–Q14, Q25.
+- **Nullified** Q5a–Q5d for respondents whose website purpose wasn't "Commercial."
+- Replaced coded missing values:  
+  - `-7` and `-9` → `"Inapplicable"`  
+  - `-8` → `"Prefer not to answer"`
+- Merged numerical responses with **text labels** from the `"Values"` sheet.
+- Cleaned label formatting (e.g., `(1) Yes` → `Yes`).
+- Converted numeric fields to `numeric` type and categorical fields to `factors` for modeling.
+
+---
+
 We developed a **Classification Tree (CART)** to understand and predict advocacy behavior.
 
 ![CART Tree Visualization](https://github.com/choulythy/Godaddy-Survey-CART/blob/main/Screenshot%202025-04-07%20at%204.17.33%20in%20the%20afternoon.png)
